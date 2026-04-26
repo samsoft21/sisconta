@@ -10,19 +10,17 @@ function cargarEmpleados() {
         type: "GET",
         dataType: "json",
         success: function (data) {
-
             let filas = "";
             let i = 1;
-
             data.forEach(emp => {
                 filas += `
                     <tr>
                         <td>${i++}</td>
                         <td>${emp.ape_empleado} ${emp.nom_empleado}</td>
                         <td>${emp.car_empleado}</td>
-                        <td>
-                            <button class="btn btn-primary btn-sm">Editar</button>
-                            <button class="btn btn-danger btn-sm">Eliminar</button>
+                        <td class='d-flex justify-content-end gap-2'>
+                            <button class="btn btn-primary btn-sm" data-id="${emp.ced_empleado}">Editar</button>
+                            <button class="btn btn-danger btn-sm" data-id="${emp.ced_empleado}">Eliminar</button>
                         </td>
                     </tr>
                 `;
@@ -35,6 +33,7 @@ function cargarEmpleados() {
         }
     });
 }
+
 
 $(".btn_nuevo").click(function(){
     $(".formEmpleados").removeClass("d-none")

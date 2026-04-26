@@ -5,6 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 <link rel="stylesheet" href="./css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+
+body{
+    background:#f4f6f9;
+}
+
+/* CONTENEDOR MENU */
+.menu-icons{
+    display:flex;
+    flex-wrap:nowrap;
+    gap:15px;
+    overflow-x:auto;
+    padding:20px;
+    scrollbar-width:none;
+}
+
+.menu-icons::-webkit-scrollbar{
+    display:none;
+}
+
+/* BOTONES */
+.btn-icon{
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:18px;
+    color:white;
+    font-size:2rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    flex-shrink:0;
+    transition:.3s;
+    box-shadow:0 8px 15px rgba(0,0,0,.12);
+}
+
+.btn-icon:hover{
+    transform:translateY(-5px) scale(1.08);
+    color:white;
+}
+
+/* COLORES */
+.bg1{background:#0d6efd;}   /* Dashboard */
+.bg2{background:#198754;}   /* Ventas */
+.bg3{background:#dc3545;}   /* Compras */
+.bg4{background:#fd7e14;}   /* Caja */
+.bg5{background:#6f42c1;}   /* Reportes */
+.bg6{background:#20c997;}   /* Clientes */
+.bg7{background:#6610f2;}   /* Usuarios */
+.bg8{background:#343a40;}   /* Config */
+
+@media(max-width:768px){
+
+.btn-icon{
+    width:65px;
+    height:65px;
+    font-size:1.6rem;
+}
+
+}
+
+</style>
 </head>
 <body>
 <div class="container-fluid">
@@ -14,16 +79,71 @@
           alt="Logo de la empresa">
         </div>
         <div class="col-9 d-flex justify-content-end align-items-center border bg-black">
-                    <div >
-                         <button class="btn bg-info text-danger fw-bold btn_nuevo">+ Nuevo</button>
-                                             <button class="btn bg-danger text-black fw-bold"> <- Regresar</button>
+        <!-- botonera -->
+    <div class="menu-icons">
 
-                        </div>
+        <a href="#" class="btn-icon bg1" title="Inicio">
+            <i class="bi bi-house-fill"></i>
+        </a>
+
+        <a href="#" class="btn-icon bg1" title="Estado de Situacion Incial">
+<i class="bi bi-building"></i>
+        </a>
+        <a href="#" class="btn-icon bg1" title="Libro diario">
+<i class="bi bi-box-seam"></i>
+        </a>
+        <a href="#" class="btn-icon bg1" title="Balance General">
+<i class="bi bi-envelope-fill"></i>
+        </a>
+        
+
+        <a href="#" class="btn-icon bg2" title="Ventas">
+            <i class="bi bi-cart-check-fill"></i>
+        </a>
+
+        <a href="#" class="btn-icon bg3" title="Compras">
+            <i class="bi bi-bag-fill"></i>
+        </a>
+
+        <a href="#" class="btn-icon bg4" title="Caja">
+            <i class="bi bi-cash-stack"></i>
+        </a>
+
+        <a href="#" class="btn-icon bg5" title="Reportes">
+            <i class="bi bi-bar-chart-fill"></i>
+        </a>
+
+        <a href="#" class="btn-icon bg6" title="Clientes">
+            <i class="bi bi-people-fill"></i>
+        </a>
+
+        <a href="#" class="btn-icon bg7" title="Usuarios">
+            <i class="bi bi-person-gear"></i>
+        </a>
+
+        <a href="#" class="btn-icon bg8" title="Configuración">
+            <i class="bi bi-gear-fill"></i>
+        </a>
+
+    </div>
+
+ 
+        <!-- fin botonera -->
+<div >
+
+         </div>
         </div>
     </div>
     <!-- diseno la tabla -->
 <div class="table-responsive tablaempleado">
-<table class="table table-striped table-condenesed border table-hover">
+<div class="d-flex justify-content-end my-4 gap-2">
+              <button class="btn bg-info text-danger fw-bold btn_nuevo">+ Nuevo</button>
+              <button class="btn bg-danger text-black fw-bold"> <- Cerrar</button>
+
+</div>
+
+
+    <table class="table table-striped table-condenesed border table-hover">
     <thead class="table-light">
         <th>Nro</th>
         <th>Apellidos y Nombres</th>

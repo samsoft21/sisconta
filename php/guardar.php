@@ -11,7 +11,6 @@ charset=utf8",
 $user, $pass
 );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo " Conexión exitosa <br>";
 } catch(PDOException $e) {
     die(" Error de conexión: " . $e->getMessage());
 }
@@ -23,9 +22,9 @@ $car = $_POST['cargo'];
 
 
 
-$insertar=$pdo->query(" INSERT INTO tbl_empleado(ced_empleado, ape_empleado, nom_empleado, car_empleado") 
-VALUES ('$ced','$ape','$nombre','$car',) ;
-
+$insertar = $pdo->query("INSERT INTO tbl_empleado 
+(ced_empleado, ape_empleado, nom_empleado, car_empleado) 
+VALUES ('$ced', '$ape', '$nombre', '$car')");
 
 if($insertar){
 echo json_encode([
@@ -33,7 +32,7 @@ echo json_encode([
         "mensaje" => "Empleado registardo correctamente"
     ]);
 
-} esle {
+} else {
     echo json_encode([
         "success" => false,
         "mensaje" => "Usuario no fue registrado correctamente"

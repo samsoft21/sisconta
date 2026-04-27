@@ -13,15 +13,13 @@ charset=utf8",
 $user, $pass
 );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
 } catch(PDOException $e) {
     die(" Error de conexión: " . $e->getMessage());
 }
 
-// $consulta=$pdo->query("SELECT ced_empleado, ape_empleado, nom_empleado, car_empleado FROM tbl_empleado");
-    $sql = "SELECT ced_empleado, ape_empleado, nom_empleado, car_empleado FROM tbl_empleado";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-    $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$cedula=$_GET['codigo'];
+
+$consulta=$pdo->query("SELECT ced_empleado, ape_empleado, nom_empleado, car_empleado FROM tbl_empleado where ced_empleado ='$cedula'");
+    $empleados = $consulta->fetch();
     echo json_encode($empleados);
 

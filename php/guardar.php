@@ -22,9 +22,17 @@ $car = $_POST['cargo'];
 
 
 
-$insertar = $pdo->query("INSERT INTO tbl_empleado 
-(ced_empleado, ape_empleado, nom_empleado, car_empleado) 
-VALUES ('$ced', '$ape', '$nombre', '$car')");
+$insertar = $pdo->query("
+    INSERT INTO tbl_empleado 
+    (ced_empleado, ape_empleado, nom_empleado, car_empleado)
+    VALUES ('$ced', '$ape', '$nombre', '$car')
+    ON DUPLICATE KEY UPDATE
+    ced_empleado = '$ced',
+    ape_empleado = '$ape',
+    nom_empleado = '$nombre',
+    car_empleado = '$car'
+");
+
 
 if($insertar){
 echo json_encode([

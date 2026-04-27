@@ -6,70 +6,7 @@
     <title>Login</title>
 <link rel="stylesheet" href="./css/bootstrap.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-<style>
-
-body{
-    background:#f4f6f9;
-}
-
-/* CONTENEDOR MENU */
-.menu-icons{
-    display:flex;
-    flex-wrap:nowrap;
-    gap:15px;
-    overflow-x:auto;
-    padding:20px;
-    scrollbar-width:none;
-}
-
-.menu-icons::-webkit-scrollbar{
-    display:none;
-}
-
-/* BOTONES */
-.btn-icon{
-    width:50px;
-    height:50px;
-    border:none;
-    border-radius:18px;
-    color:white;
-    font-size:2rem;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-    flex-shrink:0;
-    transition:.3s;
-    box-shadow:0 8px 15px rgba(0,0,0,.12);
-}
-
-.btn-icon:hover{
-    transform:translateY(-5px) scale(1.08);
-    color:white;
-}
-
-/* COLORES */
-.bg1{background:#0d6efd;}   /* Dashboard */
-.bg2{background:#198754;}   /* Ventas */
-.bg3{background:#dc3545;}   /* Compras */
-.bg4{background:#fd7e14;}   /* Caja */
-.bg5{background:#6f42c1;}   /* Reportes */
-.bg6{background:#20c997;}   /* Clientes */
-.bg7{background:#6610f2;}   /* Usuarios */
-.bg8{background:#343a40;}   /* Config */
-
-@media(max-width:768px){
-
-.btn-icon{
-    width:65px;
-    height:65px;
-    font-size:1.6rem;
-}
-
-}
-
-</style>
+<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 <div class="container-fluid">
@@ -148,18 +85,12 @@ body{
         <th>Nro</th>
         <th>Apellidos y Nombres</th>
         <th>Cargo </th>
-        <th>Accion</th>
+        <th class="d-flex justify-content-end">Accion</th>
     </thead>
-
-<tbody id="listaempleado">
-    
-
-</tbody>
-
-</table>
-
-
-
+        <tbody id="tablaempleado">
+            
+        </tbody>
+    </table>
 </div>
 
 
